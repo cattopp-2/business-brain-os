@@ -1,0 +1,66 @@
+{
+  "env": {},
+  "autoMode": {
+    "allow": [
+      "$defaults"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/load-memory-snapshot.js\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/skill-auto-commit.js\""
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(node *)",
+      "Bash(ls *)",
+      "Bash(dir *)",
+      "Bash(mkdir *)",
+      "Bash(New-Item *)",
+      "Bash(Get-ChildItem *)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(pwd)",
+      "Bash(cd *)"
+    ],
+    "deny": [
+      "Bash(npm install*)",
+      "Bash(yarn add*)",
+      "Bash(pip install*)",
+      "Bash(pip3 install*)",
+      "Bash(brew install*)",
+      "Bash(rm -rf*)",
+      "Bash(Remove-Item*-Recurse*)",
+      "Bash(del /f*)",
+      "Bash(rmdir /s*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/credentials*)",
+      "Read(**/secrets*)"
+    ]
+  }
+}

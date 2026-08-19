@@ -1,0 +1,32 @@
+# API keys and credentials — never commit these
+.claude/settings.local.json
+.env
+.env.*
+**/credentials*
+**/secrets*
+**/google-token*
+**/google-client-secrets*
+
+# Session memory — personal to each user, not shared
+context/memory/
+context/tomorrow.md
+context/weekly-focus.md
+context/revenue-tracker.md
+
+# Generated outputs — not part of the shared system
+projects/
+scripts/post_data.json
+scripts/project_nudge_data.json
+scripts/blog_email_data.json
+
+# Nested git repos inside skills
+.claude/skills/last30days/.git/
+
+# Mac system files
+.DS_Store
+__MACOSX/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo

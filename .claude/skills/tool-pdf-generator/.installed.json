@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "installed_at": "2026-05-14T11:27:55.365Z",
+  "installer_version": "2.1.0",
+  "files": {
+    "CHANGELOG.md": "sha256:8ef76f03b73f46c6d265524d8719497b4b5019f62a1ce97de0ad74bbc957162a",
+    "SKILL.md": "sha256:6ca69848e5de46ba530d1b58f4a4e1f2ec53a83b702eacd0d8892a7bcb6a4ae7",
+    "scripts/setup.sh": "sha256:1d1bc08454ddc8994c1d63f2588871649397863b6adaa1b387e299e7e0e2a1ba",
+    "skill-pack/config/sys-config.md": "sha256:36d1938b9278930f35b4bb664f8888c75504042e42431618d9e92d97bd324155"
+  }
+}
