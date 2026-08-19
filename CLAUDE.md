@@ -105,6 +105,7 @@ Skills live at `.claude/skills/` and are available to all projects under this fo
 | `setup-north-star` | Interview skill — asks questions and writes `context/ceo-north-star.md` and `context/revenue-tracker.md` |
 | `setup-brand-voice` | Guides you through collecting writing samples, then runs `mkt-brand-voice` to generate your voice profile |
 | `setup-icp` | Interview skill — asks questions and writes `brand-context/icp.md` and your first audience language file |
+| `setup-brand-stories` | Collects brand stories and testimonials, compiles `story-bank.md` and `testimonials.md`, updates ICP and voice profile |
 
 ### Strategic skills
 
