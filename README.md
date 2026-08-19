@@ -65,6 +65,23 @@ Just open Claude Code, type "run setup-user-profile", and follow the prompts.
 
 ---
 
+## Your Files vs Cathy's Updates
+
+When you pull updates from GitHub, only Cathy's files change — your personal files are never overwritten.
+
+**Your folders (edit freely, never touched by updates):**
+- `brand-context/` — your voice profile, ICP, audience language, and brand assets
+- `source/` — your raw source material (transcripts, notes, recordings)
+
+**Cathy's folders (updated regularly — don't edit these):**
+- `.claude/skills/` — the skill library
+- `context/` — session start templates
+- `offers/` — offer reference files
+
+If you stick to editing only `brand-context/` and `source/`, pulling updates will always be safe and conflict-free.
+
+---
+
 ## Support
 
 Questions and troubleshooting are handled inside the AI Business Accelerator course and group calls.
