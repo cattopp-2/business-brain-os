@@ -2,11 +2,11 @@
 
 ## What This Skill Does
 
-Guides you through finding and saving 5–10 examples of your natural writing, then runs `mkt-brand-voice` to build your voice profile automatically.
+Guides you through finding and saving 5–10 examples of your natural writing, then compiles them and runs `mkt-brand-voice` to build your voice profile automatically.
 
 The voice profile is what every copy skill reads before it writes a word. Without it, the system writes in generic AI-speak. With it, it writes in your voice.
 
-Run this once during Module 3 setup. You can add more examples or regenerate your voice profile any time.
+Run this once during setup. You can add more examples or regenerate your voice profile any time.
 
 ---
 
@@ -20,7 +20,21 @@ Run this once during Module 3 setup. You can add more examples or regenerate you
 
 ---
 
-## Step 1 — Explain what you need
+## Step 1 — Check for existing files
+
+Before asking anything, check whether `brand-context/writing-samples/` already contains files (other than README.md).
+
+**If files exist:** Say:
+"I can see you've already saved [number] writing examples in your writing-samples folder. I'll use those. If you want to add more before I build your voice profile, paste them now — otherwise just say go and I'll get started."
+
+- If they say go: skip to Step 3.
+- If they paste more: save each one (Step 2), then go to Step 3.
+
+**If no files exist:** Go to Step 2.
+
+---
+
+## Step 2 — Collect examples by pasting
 
 Say this:
 
@@ -30,9 +44,9 @@ The more natural, the better. If you've only got three right now, start with tho
 
 Do you want to start pasting examples, or do you want me to help you think about where to look first?"
 
-**If they want to start pasting:** go to Step 2.
+**If they want to start pasting:** go to the Collecting path below.
 
-**If they need help finding examples:** go to the Finding Examples path below before Step 2.
+**If they need help finding examples:** go to the Finding Examples path below first.
 
 ---
 
@@ -50,11 +64,11 @@ Work through these prompts one at a time until they've identified at least 5 sou
 
 5. "If none of those feel right — have you ever transcribed a voice note or a Loom? That's often the most natural writing there is because it wasn't written at all."
 
-Once they've identified sources, ask them to start pasting. Go to Step 2.
+Once they've identified sources, ask them to start pasting. Go to the Collecting path below.
 
 ---
 
-## Step 2 — Collect the examples
+## Collecting Path
 
 Ask them to paste one example at a time:
 
@@ -62,42 +76,44 @@ Ask them to paste one example at a time:
 
 After each example:
 - Acknowledge it simply. ("Got it." / "Perfect." / "That's a good one.")
+- Save it immediately as a separate file in `brand-context/writing-samples/` using this naming convention: `example-[number]-[source].md` — e.g. `example-01-email.md`, `example-02-facebook-post.md`. Use a slugified version of whatever source label they gave. If they gave none, use `example-01-unknown.md`.
 - Ask: "Do you have another one to add?"
-- Continue until they have at least 5, or they say they're done.
+- Continue until they have at least 5 across pasted and pre-existing files combined, or they say they're done.
 
-If they stop before 5, say: "Five is the minimum for a solid voice profile — can you find one or two more? Even a short email or a quick Facebook post works."
+If they stop before 5 total, say: "Five is the minimum for a solid voice profile — can you find one or two more? Even a short email or a quick Facebook post works."
 
 ---
 
-## Step 3 — Save writing-examples.md
+## Step 3 — Compile writing-examples.md
 
-Once you have at least 5 examples, write `brand-context/writing-examples.md` using this structure:
+Read all files in `brand-context/writing-samples/` (skip README.md). Compile them into `brand-context/writing-examples.md` using this structure:
 
 ```markdown
 # Writing Examples — [Their Brand Name]
 
-5–10 examples of natural writing. Used by `mkt-brand-voice` to build the voice profile.
+[Number] examples of natural writing. Used by `mkt-brand-voice` to build the voice profile.
+Last compiled: [today's date]
 
 ---
 
-## Example 1 — [Source they gave, or "Unknown"]
+## Example 1 — [Filename or source label]
 
-[Example text]
-
----
-
-## Example 2 — [Source]
-
-[Example text]
+[Full text of example]
 
 ---
 
-[Continue for each example]
+## Example 2 — [Filename or source label]
+
+[Full text of example]
+
+---
+
+[Continue for each file]
 ```
 
-Do not edit or clean up their examples. Preserve exactly what they pasted — typos, informal language, line breaks, everything.
+Do not edit or clean up the examples. Preserve exactly what was written — typos, informal language, line breaks, everything.
 
-After saving, confirm: "Saved. I've got [number] examples in writing-examples.md. Now I'll run the brand voice skill to build your voice profile."
+After saving, confirm: "Compiled [number] examples into writing-examples.md. Now I'll run the brand voice skill to build your voice profile."
 
 ---
 
@@ -109,6 +125,6 @@ After it completes:
 
 "Your voice profile is ready in brand-context/voice-profile.md. Have a read through — specifically the section that shows sample sentences in your voice. Does it sound like you?
 
-If something feels off, the best fix is usually more examples. Add them to writing-examples.md and run mkt-brand-voice again."
+If something feels off, the best fix is usually more examples. Drop more files into brand-context/writing-samples/ and run setup-brand-voice again — it'll pick up everything in the folder."
 
-Then suggest they move to Module 4: mapping their audience.
+Then suggest they move to the next setup skill: `setup-icp`.
